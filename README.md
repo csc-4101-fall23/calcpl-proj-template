@@ -63,7 +63,7 @@ make_f "div4_f" 26.5 "26.3+.2.1/.10.6";
 make_f "div5_f" 28.19 "26.3+.2.7-.8.3/.10.3";
 make_f "div6_f" 67.51 "2.1*.26.4+.12.9-.8.6/.10.4";
 ```
-### LEQ or =<>
+### LEQ or <=
 Now that we have `float` types, our `=<` operator, we expect to pass the following unit tests.
 
 ```ocaml
