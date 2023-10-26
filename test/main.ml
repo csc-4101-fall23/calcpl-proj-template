@@ -59,7 +59,7 @@ let tests = [
   make_b "geq" true "1=>1";
   make_b "geq2" false "2=>5";
   make_i "if4" 0 "if 1+2 => 3+4 then 22 else 0";
-  make_f "float" 22.20 "22.20";
+  make_f "float" 22.2 "22.2";
   make_f "add_f" 22.5 "11.0+.11.5";
   make_f "adds_f" 24.1 "(10.3+.1.7)+.(5.7+.6.4)";
   make_f "let_f" 22.5 "let x : float = 22.5 in x";
