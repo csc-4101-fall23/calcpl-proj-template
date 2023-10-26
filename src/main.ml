@@ -55,6 +55,12 @@ end
 
 open StaticEnvironment
 
+(** Converts x float to d point float ex. round_dfrac 2 3.140000009 returns 3.14*)
+let round_dfrac d x =
+  if x -. (Float.round x) = 0. then x else                   (* x is an integer. *)
+  let m = 10. ** (float d) in                       (* m moves 10^-d to 1. *)
+  (floor ((x *. m) +. 0.5)) /. m
+
 (** [typeof env e] is the type of [e] in context [env]. 
     Raises: [Failure] if [e] is not well typed in [env]. *)
 let rec typeof env = function
@@ -64,6 +70,7 @@ let rec typeof env = function
   | Let (x, t ,e1, e2) -> typeof_let env x t e1 e2
   | Binop (bop, e1, e2) -> typeof_bop env bop e1 e2
   | If (e1, e2, e3) -> typeof_if env e1 e2 e3
+  | _ -> failwith "TODO"
   
 (** Helper function for [typeof]. *)
 and typeof_let env x t e1 e2 = 
@@ -115,6 +122,7 @@ let rec subst e v x = match e with
     else Let (y, t, e1', subst e2 v x)
   | If (e1, e2, e3) -> 
     If (subst e1 v x, subst e2 v x, subst e3 v x)
+  | _ -> failwith "TODO"
   
 (** [eval e] the [v]such that [e ==> v]. *)
 let rec eval (e : expr) : expr = match e with
@@ -123,6 +131,7 @@ let rec eval (e : expr) : expr = match e with
   | Binop (bop, e1, e2) -> eval_bop bop e1 e2
   | Let (x, _, e1, e2) -> subst e2 (eval e1) x|> eval
   | If (e1, e2, e3) -> eval_if e1 e2 e3
+  | _ -> failwith "TODO"
 
 (** [eval_let x e1 e2] is the [v] such that [let x = e1 in e2 ==> v]. *) 
 and eval_let x e1 e2 = 

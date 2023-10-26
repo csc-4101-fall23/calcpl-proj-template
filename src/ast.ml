@@ -13,5 +13,6 @@ type expr =
 | Int of int
 | Bool of bool
 | Binop of bop * expr * expr
+| Float of float
 | Let of string * typ * expr * expr
 | If of expr * expr * expr
