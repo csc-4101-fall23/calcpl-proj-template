@@ -56,9 +56,9 @@ let tests = [
   make_i "div4" 26 "26+2/10";
   make_i "div5" 28 "26+2-8/10";
   make_i "div6" 54 "2*26+2-8/10";
-  make_b "geq" true "1=>1";
-  make_b "geq2" false "2=>5";
-  make_i "if4" 0 "if 1+2 => 3+4 then 22 else 0";
+  make_b "geq" true "1>=1";
+  make_b "geq2" false "2>=5";
+  make_i "if4" 0 "if 1+2 >= 3+4 then 22 else 0";
   make_f "float" 22.2 "22.2";
   make_f "add_f" 22.5 "11.0+.11.5";
   make_f "adds_f" 24.1 "(10.3+.1.7)+.(5.7+.6.4)";
@@ -70,8 +70,8 @@ let tests = [
   make_f "mul4_f" 44.88 "2.0*.2.2*.10.2";
   make_b "leq_f" true "1.0<=1.0";
   make_b "leq_f" false "5.0<=2.0";
-  make_b "geq_f" true "1.0=>1.0";
-  make_b "geq2_f" false "2.0=>5.0";
+  make_b "geq_f" true "1.0>=1.0";
+  make_b "geq2_f" false "2.0>=5.0";
   make_f "sub_f" 21.20 "33.0-.11.8";
   make_f "subs_f" 20.90 "(39.0-.1.2)-.(22.9-.6.0)";
   make_f "subadd_f" 1.5 "(39.0-.1.2)-.(20.1+.16.2)";
@@ -95,7 +95,7 @@ let tests = [
   make_t "invalid div_float_int" bop_err "1.0 /. 1";
   make_t "invalid guard_float" if_guard_err "if 1.0 then 2 else 3";
   make_t "invalid leq_float" bop_err "true <= 1.0";
-  make_t "invalid geq_float" bop_err "true => 1.0";
+  make_t "invalid geq_float" bop_err "true >= 1.0";
 ]
 
 let _ = run_test_tt_main ("suite" >::: tests)

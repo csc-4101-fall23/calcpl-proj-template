@@ -64,7 +64,7 @@ make_f "div5_f" 28.19 "26.3+.2.7-.8.3/.10.3";
 make_f "div6_f" 67.51 "2.1*.26.4+.12.9-.8.6/.10.4";
 ```
 ### LEQ or <=
-Now that we have `float` types, our `=<` operator, we expect to pass the following unit tests.
+Now that we have `float` types, our `<=` operator, we expect to pass the following unit tests.
 
 ```ocaml
 make_b "leq_f" true "1.0<=1.0";
@@ -75,10 +75,10 @@ make_b "leq_f" false "5.0<=2.0";
 For `>=` operator, we expect to pass the following unit tests.
 
 ```ocaml
-make_b "geq" true "1=>1";
-make_b "geq2" false "2=>5";
-make_b "geq_f" true "1.0=>1.0";
-make_b "geq2_f" false "2.0=>5.0";
+make_b "geq" true "1>=1";
+make_b "geq2" false "2>=5";
+make_b "geq_f" true "1.0>=1.0";
+make_b "geq2_f" false "2.0>=5.0";
 ```
 
 ### Type-Handling
