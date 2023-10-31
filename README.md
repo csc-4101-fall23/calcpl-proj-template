@@ -2,6 +2,8 @@
 
 **This is an group assignment. You can up to 2 team member to work on this project. Bonus part must be done individually.**
 
+**Update** : (10/31) To make things easier, you can assume that `-` and `-.` operators have white space before and after (e.g., ` - ` and ` -. `)
+
 ## Introduction
 The goal of this project is to get you familiar with extend our programming language (CalcPL). 
 You need to add the following. 
