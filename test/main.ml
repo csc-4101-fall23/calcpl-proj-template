@@ -63,7 +63,7 @@ let tests = [
   make_f "add_f" 22.5 "11.0+.11.5";
   make_f "adds_f" 24.1 "(10.3+.1.7)+.(5.7+.6.4)";
   make_f "let_f" 22.5 "let x : float = 22.5 in x";
-  make_f "lets" 22.5 "let x : float = 0 in let x : float = 22.5 in x";
+  make_f "lets_f" 22.5 "let x : float = 0.0 in let x : float = 22.5 in x";
   make_f "mul1_f" 28.5 "2.5*.11.4";
   make_f "mul2_f" 26.5 "2.2+.2.7*.9.0";
   make_f "mul3_f" 13.9 "2.2*.2.0+.9.5";
