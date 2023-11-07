@@ -46,7 +46,7 @@ let tests = [
   make_t "unbound" unbound_var_err "x";
 
   make_i "sub" 22 "33 - 11";
-  make_i "subs" 22 "(39-1) - (22 - 6)";
+  make_i "subs" 22 "(39 - 1) - (22 - 6)";
   make_i "subadd" 29 "(52 - 1) - (16+6)";
   make_i "subadd2" 31 "(52+1) - (16+6)";
   make_i "submuls" 101 "(22 - 17)+(16*6)";
